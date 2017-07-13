@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-api" % "1.7.25",
   "com.storm-enroute" %% "scalameter" % "0.8.2" % "test",
   "ch.qos.logback" % "logback-classic" % "1.2.3",
-  "com.typesafe.scala-logging" %% "scala-logging-slf4j" % "2.1.2",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.7.1",
   "com.h2database" % "h2" % "1.4.196",
   "com.typesafe.akka" %% "akka-actor" % "2.5.3",
   "com.typesafe.akka" %% "akka-agent" % "2.5.3",
