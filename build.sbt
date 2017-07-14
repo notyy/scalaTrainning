@@ -44,5 +44,6 @@ testOptions in Test ++= Seq(
   Tests.Argument(TestFrameworks.ScalaTest,"-h","target/html-unit-test-report"),
   Tests.Argument(TestFrameworks.ScalaTest,"-u","target/unit-test-reports"),
   Tests.Argument(TestFrameworks.ScalaTest,"-o"),
+  //exclude FunctinalTest by default
   Tests.Argument(TestFrameworks.ScalaTest,"-l","FunctionTest")
 )
