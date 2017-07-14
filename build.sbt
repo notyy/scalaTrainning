@@ -36,3 +36,13 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-typed" % "2.5.3",
   "com.typesafe.akka" %% "akka-contrib" % "2.5.3"
 )
+
+parallelExecution in Test := false
+
+// create beautiful scala test report
+testOptions in Test ++= Seq(
+  Tests.Argument(TestFrameworks.ScalaTest,"-h","target/html-unit-test-report"),
+  Tests.Argument(TestFrameworks.ScalaTest,"-u","target/unit-test-reports"),
+  Tests.Argument(TestFrameworks.ScalaTest,"-o"),
+  Tests.Argument(TestFrameworks.ScalaTest,"-l","FunctionTest")
+)
