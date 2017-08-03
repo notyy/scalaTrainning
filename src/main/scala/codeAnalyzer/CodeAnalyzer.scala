@@ -14,9 +14,7 @@ trait CodeAnalyzer {
       files.map(f => fileCount(f.getAbsolutePath)).sum
     }
   }
-}
 
-object CodeAnalyzer extends CodeAnalyzer {
   def lineOfCode(path: String): Int = {
     val file = new File(path)
     if (file.isFile) Source.fromFile(path).getLines().length
@@ -26,3 +24,5 @@ object CodeAnalyzer extends CodeAnalyzer {
     }
   }
 }
+
+object CodeAnalyzer extends CodeAnalyzer
