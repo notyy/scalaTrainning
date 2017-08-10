@@ -1,28 +1,18 @@
 package codeAnalyzer
 
-import java.io.File
-
 import scala.io.Source
 
 
 trait CodeAnalyzer {
+  this: DirectoryScanner =>
+
   def fileCount(path: String): Int = {
-    val file = new File(path)
-    if (file.isFile) 1
-    else {
-      val files = file.listFiles()
-      files.map(f => fileCount(f.getAbsolutePath)).sum
-    }
+    withFile(path)(_ => 1)(_ + _)
   }
 
   def lineOfCode(path: String): Int = {
-    val file = new File(path)
-    if (file.isFile) Source.fromFile(path).getLines().length
-    else {
-      val files = file.listFiles()
-      files.map(f => lineOfCode(f.getAbsolutePath)).sum
-    }
+    withFile(path)(file => Source.fromFile(file).getLines().length)(_ + _)
   }
 }
 
-object CodeAnalyzer extends CodeAnalyzer
+object CodeAnalyzer extends CodeAnalyzer with DirectoryScanner

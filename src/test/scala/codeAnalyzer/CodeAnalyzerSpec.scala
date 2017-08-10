@@ -1,5 +1,7 @@
 package codeAnalyzer
 
+import java.io.File
+
 import org.scalatest.{FeatureSpec, GivenWhenThen, Matchers}
 
 class CodeAnalyzerSpec extends FeatureSpec with Matchers with GivenWhenThen {
