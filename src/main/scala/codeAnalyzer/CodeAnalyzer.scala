@@ -4,7 +4,7 @@ package codeAnalyzer
 trait CodeAnalyzer {
   this: DirectoryScanner with FileProcessor =>
 
-  def analyze(path: String): CodeInfo = {
+  def analyze(path: String): Option[CodeInfo] = {
     withFile(path)(processFile)(_ + _)
   }
 }
